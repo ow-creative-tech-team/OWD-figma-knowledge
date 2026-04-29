@@ -25,7 +25,8 @@ jobs:
           cd "$GITHUB_WORKSPACE"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git remote add origin "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
-          git config --local "http.${GITHUB_SERVER_URL}/.extraheader" "AUTHORIZATION: bearer ${GH_TOKEN}"
+          AUTH_HEADER="$(printf "x-access-token:%s" "$GH_TOKEN" | base64 | tr -d '\n')"
+          git config --local "http.${GITHUB_SERVER_URL}/.extraheader" "AUTHORIZATION: basic ${AUTH_HEADER}"
 
           if [[ "$GITHUB_REF" == refs/heads/* ]]; then
             BRANCH="${GITHUB_REF#refs/heads/}"
