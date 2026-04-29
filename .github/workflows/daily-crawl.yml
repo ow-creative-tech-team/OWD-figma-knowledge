@@ -15,13 +15,53 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-          cache-dependency-path: OWD-figma-api-snapshot-master/package-lock.json
+          git init "$GITHUB_WORKSPACE"
+          cd "$GITHUB_WORKSPACE"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git remote add origin "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+          git config --local "http.${GITHUB_SERVER_URL}/.extraheader" "AUTHORIZATION: bearer ${GH_TOKEN}"
+
+          if [[ "$GITHUB_REF" == refs/heads/* ]]; then
+            BRANCH="${GITHUB_REF#refs/heads/}"
+            git fetch --no-tags --prune --depth=1 origin "+${GITHUB_REF}:refs/remotes/origin/${BRANCH}"
+            git checkout -B "$BRANCH" "refs/remotes/origin/${BRANCH}"
+            git branch --set-upstream-to="origin/${BRANCH}" "$BRANCH"
+          else
+            git fetch --no-tags --prune --depth=1 origin "$GITHUB_SHA"
+            git checkout --force "$GITHUB_SHA"
+          fi
+
+      - name: Select Node.js runtime
+        run: |
+          set -euo pipefail
+
+          if [ -d /opt/hostedtoolcache/node ]; then
+            NODE_BIN="$(
+              find /opt/hostedtoolcache/node -path "*/x64/bin/node" -type f | sort -V | while read -r node_bin; do
+                version="$("$node_bin" -p "process.versions.node")"
+                IFS=. read -r major minor patch <<< "$version"
+                if (( major > 20 || (major == 20 && (minor > 18 || (minor == 18 && patch >= 1))) )); then
+                  echo "$node_bin"
+                fi
+              done | tail -n 1
+            )"
+
+            if [ -n "$NODE_BIN" ]; then
+              NODE_DIR="$(dirname "$NODE_BIN")"
+              echo "$NODE_DIR" >> "$GITHUB_PATH"
+              export PATH="$NODE_DIR:$PATH"
+            fi
+          fi
+
+          node --version
+          npm --version
+          node -e 'const min = [20, 18, 1]; const got = process.versions.node.split(".").map(Number); const ok = got[0] > min[0] || (got[0] === min[0] && (got[1] > min[1] || (got[1] === min[1] && got[2] >= min[2]))); if (!ok) { console.error(`Node.js >= ${min.join(".")} is required; found ${process.versions.node}`); process.exit(1); }'
 
       - name: Install dependencies
         working-directory: OWD-figma-api-snapshot-master
@@ -61,18 +101,31 @@ jobs:
       - name: Push commits and tag
         if: steps.commit.outputs.changed == 'true'
         run: |
+          set -euo pipefail
+          if [[ "$GITHUB_REF" != refs/heads/* ]]; then
+            echo "Refusing to push from non-branch ref: $GITHUB_REF"
+            exit 1
+          fi
+
           VERSION=${{ steps.bump.outputs.version }}
           git tag "v${VERSION}"
-          git push --follow-tags
+          git push origin "HEAD:${GITHUB_REF}" "refs/tags/v${VERSION}"
 
       - name: Create GitHub Release
         if: steps.commit.outputs.changed == 'true'
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ steps.bump.outputs.version }}
-          name: v${{ steps.bump.outputs.version }}
-          generate_release_notes: false
-          body: |
-            Automated dataset refresh — ${{ steps.bump.outputs.version }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.bump.outputs.version }}
+        run: |
+          set -euo pipefail
 
-            Crawled on $(date -u +%Y-%m-%d).
+          NOTES_FILE="${RUNNER_TEMP}/release-notes.md"
+          {
+            echo "Automated dataset refresh - ${VERSION}"
+            echo
+            echo "Crawled on $(date -u +%Y-%m-%d)."
+          } > "$NOTES_FILE"
+
+          gh release create "v${VERSION}" \
+            --title "v${VERSION}" \
+            --notes-file "$NOTES_FILE"
