@@ -59903,6 +59903,59 @@ focusedSlide
 
 ---
 
+# focusedSlide | Developer Docs
+
+Source: https://developers.figma.com/docs/plugins/api/properties/PageNode-focusedslide/
+
+*   [](/)
+*   Plugins
+*   [Node Types](/docs/plugins/api/nodes/)
+*   [PageNode](/docs/plugins/api/PageNode/)
+*   focusedSlide
+
+# focusedSlide
+
+info
+
+This API is only available in Figma Slides
+
+When in single slide view, the Slide that is currently focused is accessible via this property.
+
+Supported on:
+
+*   [PageNode](/docs/plugins/api/PageNode/)
+
+## Signature​
+
+### [focusedSlide](/docs/plugins/api/properties/PageNode-focusedslide/)?: [SlideNode](/docs/plugins/api/SlideNode/) | null
+
+## Remarks​
+
+You can also set this via:
+
+```
+figma.currentPage.focusedSlide = slideNode
+```
+
+[
+
+Previous
+
+off
+
+](/docs/plugins/api/properties/PageNode-off/)[
+
+Next
+
+focusedNode
+
+](/docs/plugins/api/properties/PageNode-focusednode/)
+
+*   Signature
+*   Remarks
+
+---
+
 # focusedNode | Developer Docs
 
 Source: https://developers.figma.com/docs/plugins/api/properties/PageNode-focusednode/

@@ -2703,6 +2703,13 @@
   },
   {
     "dataset": "plugin-api",
+    "title": "focusedSlide | Developer Docs",
+    "url": "https://developers.figma.com/docs/plugins/api/properties/PageNode-focusedslide/",
+    "path": "/docs/plugins/api/properties/PageNode-focusedslide/",
+    "slug": "docs__plugins__api__properties__PageNode-focusedslide"
+  },
+  {
+    "dataset": "plugin-api",
     "title": "focusedNode | Developer Docs",
     "url": "https://developers.figma.com/docs/plugins/api/properties/PageNode-focusednode/",
     "path": "/docs/plugins/api/properties/PageNode-focusednode/",
