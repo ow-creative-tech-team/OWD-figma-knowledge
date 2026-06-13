@@ -3172,13 +3172,6 @@
   },
   {
     "dataset": "widgets",
-    "title": "Get Help | Developer Docs",
-    "url": "https://developers.figma.com/docs/widgets/get-help/",
-    "path": "/docs/widgets/get-help/",
-    "slug": "docs__widgets__get-help"
-  },
-  {
-    "dataset": "widgets",
     "title": "The Typings File | Developer Docs",
     "url": "https://developers.figma.com/docs/widgets/api/typings/",
     "path": "/docs/widgets/api/typings/",
