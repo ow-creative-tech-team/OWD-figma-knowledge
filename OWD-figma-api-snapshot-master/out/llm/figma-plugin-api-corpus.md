@@ -11896,10 +11896,6 @@ Source: https://developers.figma.com/docs/plugins/api/properties/figma-createpag
 
 # createPage
 
-info
-
-This API is only available in Figma Design
-
 Creates a new page, appended to the document's list of children.
 
 ## Signature​
@@ -11910,7 +11906,7 @@ Creates a new page, appended to the document's list of children.
 
 A page node can be the parent of all types of nodes except for the document node and other page nodes.
 
-Files in a Starter team are limited to three pages. When a plugin tries to create more than three pages in a Starter team file, it triggers the following error:
+Files in a Starter team are limited to three pages in Figma Design files and one page in FigJam files. When a plugin tries to exceed this limit, it triggers the following error:
 
 Page limit error
 
