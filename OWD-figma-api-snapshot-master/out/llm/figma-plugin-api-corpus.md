@@ -2199,6 +2199,51 @@ The weight of the font (e.g. 400 for "Regular", 700 for "Bold").
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Supported on:
+
+*   [BooleanOperationNode](/docs/plugins/api/BooleanOperationNode/)
+*   [CodeBlockNode](/docs/plugins/api/CodeBlockNode/)
+*   [ComponentNode](/docs/plugins/api/ComponentNode/)
+*   [ComponentSetNode](/docs/plugins/api/ComponentSetNode/)
+*   [ConnectorNode](/docs/plugins/api/ConnectorNode/)
+*   [DocumentNode](/docs/plugins/api/DocumentNode/)
+*   [EllipseNode](/docs/plugins/api/EllipseNode/)
+*   [EmbedNode](/docs/plugins/api/EmbedNode/)
+*   [FrameNode](/docs/plugins/api/FrameNode/)
+*   [GroupNode](/docs/plugins/api/GroupNode/)
+*   [HighlightNode](/docs/plugins/api/HighlightNode/)
+*   [InstanceNode](/docs/plugins/api/InstanceNode/)
+*   [InteractiveSlideElementNode](/docs/plugins/api/InteractiveSlideElementNode/)
+*   [LineNode](/docs/plugins/api/LineNode/)
+*   [LinkUnfurlNode](/docs/plugins/api/LinkUnfurlNode/)
+*   [MediaNode](/docs/plugins/api/MediaNode/)
+*   [PageNode](/docs/plugins/api/PageNode/)
+*   [PolygonNode](/docs/plugins/api/PolygonNode/)
+*   [RectangleNode](/docs/plugins/api/RectangleNode/)
+*   [SectionNode](/docs/plugins/api/SectionNode/)
+*   [ShapeWithTextNode](/docs/plugins/api/ShapeWithTextNode/)
+*   [SliceNode](/docs/plugins/api/SliceNode/)
+*   [SlideGridNode](/docs/plugins/api/SlideGridNode/)
+*   [SlideNode](/docs/plugins/api/SlideNode/)
+*   [SlideRowNode](/docs/plugins/api/SlideRowNode/)
+*   [SlotNode](/docs/plugins/api/SlotNode/)
+*   [StampNode](/docs/plugins/api/StampNode/)
+*   [StarNode](/docs/plugins/api/StarNode/)
+*   [StickyNode](/docs/plugins/api/StickyNode/)
+*   [TableNode](/docs/plugins/api/TableNode/)
+*   [TextNode](/docs/plugins/api/TextNode/)
+*   [TextPathNode](/docs/plugins/api/TextPathNode/)
+*   [TransformGroupNode](/docs/plugins/api/TransformGroupNode/)
+*   [VectorNode](/docs/plugins/api/VectorNode/)
+*   [WashiTapeNode](/docs/plugins/api/WashiTapeNode/)
+*   [WidgetNode](/docs/plugins/api/WidgetNode/)
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getDevResourcesAsync(options?: { includeChildren?: boolean }): Promise<[DevResourceWithNodeId](/docs/plugins/api/DevResource/)\[\]>
 
 Supported on:
@@ -4549,7 +4594,7 @@ Returns the parent of this node, if any. This property is not meant to be direct
 
 * * *
 
-### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN'
+### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN' | 'SPACE\_EVENLY' | 'SPACE\_AROUND'
 
 Supported on:
 
@@ -8334,6 +8379,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -8818,7 +8869,7 @@ Determines whether this layer should use wrapping auto-layout. Defaults to `"NO_
 
 * * *
 
-### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN'
+### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN' | 'SPACE\_EVENLY' | 'SPACE\_AROUND'
 
 Applicable only on "HORIZONTAL" or "VERTICAL" auto-layout frames. Determines how the auto-layout frame’s children should be aligned in the primary axis direction.
 
@@ -14598,6 +14649,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -15616,6 +15673,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -16185,6 +16248,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -16669,7 +16738,7 @@ Determines whether this layer should use wrapping auto-layout. Defaults to `"NO_
 
 * * *
 
-### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN'
+### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN' | 'SPACE\_EVENLY' | 'SPACE\_AROUND'
 
 Applicable only on "HORIZONTAL" or "VERTICAL" auto-layout frames. Determines how the auto-layout frame’s children should be aligned in the primary axis direction.
 
@@ -17700,6 +17769,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -18184,7 +18259,7 @@ Determines whether this layer should use wrapping auto-layout. Defaults to `"NO_
 
 * * *
 
-### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN'
+### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN' | 'SPACE\_EVENLY' | 'SPACE\_AROUND'
 
 Applicable only on "HORIZONTAL" or "VERTICAL" auto-layout frames. Determines how the auto-layout frame’s children should be aligned in the primary axis direction.
 
@@ -19000,7 +19075,7 @@ The type of this node, represented by the string literal "CONNECTOR"
 
 * * *
 
-### text: [TextSublayerNode](/docs/plugins/api/TextSublayer/) & [SublayerDimensionsMixin](/docs/plugins/api/node-properties/) \[readonly\]
+### text: [TextSublayerNode](/docs/plugins/api/TextSublayer/) \[readonly\]
 
 Text sublayer of the ConnectorNode
 
@@ -19230,6 +19305,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -19805,6 +19886,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -20030,6 +20117,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -20957,6 +21050,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -21455,6 +21554,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -21939,7 +22044,7 @@ Determines whether this layer should use wrapping auto-layout. Defaults to `"NO_
 
 * * *
 
-### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN'
+### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN' | 'SPACE\_EVENLY' | 'SPACE\_AROUND'
 
 Applicable only on "HORIZONTAL" or "VERTICAL" auto-layout frames. Determines how the auto-layout frame’s children should be aligned in the primary axis direction.
 
@@ -22877,6 +22982,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -23742,6 +23853,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -24652,6 +24769,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -25143,6 +25266,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -26028,6 +26157,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -26541,6 +26676,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -27218,6 +27359,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -27587,6 +27734,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -28505,6 +28658,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -29569,6 +29728,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -30507,6 +30672,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -31000,6 +31171,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -31641,6 +31818,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -32250,6 +32433,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -32734,7 +32923,7 @@ Determines whether this layer should use wrapping auto-layout. Defaults to `"NO_
 
 * * *
 
-### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN'
+### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN' | 'SPACE\_EVENLY' | 'SPACE\_AROUND'
 
 Applicable only on "HORIZONTAL" or "VERTICAL" auto-layout frames. Determines how the auto-layout frame’s children should be aligned in the primary axis direction.
 
@@ -33600,6 +33789,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -34203,6 +34398,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -34687,7 +34888,7 @@ Determines whether this layer should use wrapping auto-layout. Defaults to `"NO_
 
 * * *
 
-### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN'
+### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN' | 'SPACE\_EVENLY' | 'SPACE\_AROUND'
 
 Applicable only on "HORIZONTAL" or "VERTICAL" auto-layout frames. Determines how the auto-layout frame’s children should be aligned in the primary axis direction.
 
@@ -35624,6 +35825,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -36517,6 +36724,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -37508,6 +37721,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -38252,6 +38471,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -39288,6 +39513,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -40495,6 +40726,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -41410,6 +41647,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -42276,6 +42519,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -43197,6 +43446,12 @@ This property uses a set of heuristics to determine if a node is an asset. At a 
 
 * * *
 
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
+
+* * *
+
 ### getTopLevelFrame(): [FrameNode](/docs/plugins/api/FrameNode/) | undefined
 
 Returns the top-most frame that contains this node. If the node is not inside a frame, this will return undefined.
@@ -44100,6 +44355,12 @@ This property is useful if you're building a [plugin for code generation](/docs/
 info
 
 This property uses a set of heuristics to determine if a node is an asset. At a high level an icon is a small vector graphic and an image is a node with an image fill.
+
+* * *
+
+### getCSSAsync(): Promise<{ \[key: string\]: string }>
+
+Resolves to a JSON object of CSS properties of the node. This is the same CSS that Figma shows in the inspect panel and is helpful if you are building a [plugin for code generation](/docs/plugins/codegen-plugins/).
 
 * * *
 
@@ -49556,7 +49817,7 @@ Supported on:
 
 ## Signature​
 
-### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN'
+### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN' | 'SPACE\_EVENLY' | 'SPACE\_AROUND'
 
 ## Remarks​
 
@@ -49564,14 +49825,16 @@ Changing this property will cause all the children to update their `x` and `y` v
 
 *   In horizontal auto-layout frames, `“MIN”` and `“MAX”` correspond to left and right respectively.
 *   In vertical auto-layout frames, `“MIN”` and `“MAX”` correspond to top and bottom respectively.
-*   `“SPACE_BETWEEN”` will cause the children to space themselves evenly along the primary axis, only putting the extra space between the children.
+*   `“SPACE_BETWEEN”` will space the children evenly along the primary axis, only putting the extra space between the children. The first and last child are flush with the edges of the frame.
+*   `“SPACE_EVENLY”` will space the children evenly along the primary axis, dividing the extra space equally in the spaces before the first child, between each pair of items, and after the last child.
+*   `“SPACE_AROUND”` will space the children evenly along the primary axis such that the spacing between each pair of items is equal, and the empty space before the first and after the last child is equal to half the space between items.
 
 The corresponding property for the counter axis direction is [`counterAxisAlignItems`](/docs/plugins/api/properties/nodes-counteraxisalignitems/).
 
 Horizontal auto-layout frame with different primaryAxisAlignItems values
 
 ```
-const parentFrame = figma.createFrame()parentFrame.appendChild(figma.createFrame())parentFrame.appendChild(figma.createFrame())parentFrame.layoutMode = 'HORIZONTAL'// Make the parent frame wider so we can see the effects of// the different primaryAxisAlignItems valuesparentFrame.resize(300, 100)// Parent frame// +------------------------------------+// | +-----------++-----------+         |// | |           ||           |         |// | |  Child 1  ||  Child 2  |         |// | |           ||           |         |// | +-----------++-----------+         |// +------------------------------------+parentFrame.primaryAxisAlignItems = 'MIN'// Parent frame// +------------------------------------+// |          +-----------++-----------+|// |          |           ||           ||// |          |  Child 1  ||  Child 2  ||// |          |           ||           ||// |          +-----------++-----------+|// +------------------------------------+parentFrame.primaryAxisAlignItems = 'MAX'// Parent frame// +------------------------------------+// |     +-----------++-----------+     |// |     |           ||           |     |// |     |  Child 1  ||  Child 2  |     |// |     |           ||           |     |// |     +-----------++-----------+     |// +------------------------------------+parentFrame.primaryAxisAlignItems = 'CENTER'// Parent frame// +------------------------------------+// |+-----------+          +-----------+|// ||           |          |           ||// ||  Child 1  |          |  Child 2  ||// ||           |          |           ||// |+-----------+          +-----------+|// +------------------------------------+parentFrame.primaryAxisAlignItems = 'SPACE_BETWEEN'
+const parentFrame = figma.createFrame()parentFrame.appendChild(figma.createFrame())parentFrame.appendChild(figma.createFrame())parentFrame.layoutMode = 'HORIZONTAL'// Make the parent frame wider so we can see the effects of// the different primaryAxisAlignItems valuesparentFrame.resize(300, 100)// Parent frame// +--------------------------------------+// |+-----------++-----------+            |// ||           ||           |            |// ||  Child 1  ||  Child 2  |            |// ||           ||           |            |// |+-----------++-----------+            |// +--------------------------------------+parentFrame.primaryAxisAlignItems = 'MIN'// Parent frame// +--------------------------------------+// |            +-----------++-----------+|// |            |           ||           ||// |            |  Child 1  ||  Child 2  ||// |            |           ||           ||// |            +-----------++-----------+|// +--------------------------------------+parentFrame.primaryAxisAlignItems = 'MAX'// Parent frame// +--------------------------------------+// |      +-----------++-----------+      |// |      |           ||           |      |// |      |  Child 1  ||  Child 2  |      |// |      |           ||           |      |// |      +-----------++-----------+      |// +--------------------------------------+parentFrame.primaryAxisAlignItems = 'CENTER'// Parent frame// +--------------------------------------+// |+-----------+            +-----------+|// ||           |            |           ||// ||  Child 1  |            |  Child 2  ||// ||           |            |           ||// |+-----------+            +-----------+|// +--------------------------------------+parentFrame.primaryAxisAlignItems = 'SPACE_BETWEEN'// Parent frame// +--------------------------------------+// |    +-----------+    +-----------+    |// |    |           |    |           |    |// |----|  Child 1  |----|  Child 2  |----|// |    |           |    |           |    |// |    +-----------+    +-----------+    |// +--------------------------------------+parentFrame.primaryAxisAlignItems = 'SPACE_EVENLY'// Parent frame// +--------------------------------------+// |   +-----------+      +-----------+   |// |   |           |      |           |   |// |---|  Child 1  |------|  Child 2  |---|// |   |           |      |           |   |// |   +-----------+      +-----------+   |// +--------------------------------------+parentFrame.primaryAxisAlignItems = 'SPACE_AROUND'
 ```
 
 [
@@ -54454,7 +54717,7 @@ Determines whether this layer should use wrapping auto-layout. Defaults to `"NO_
 
 * * *
 
-### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN'
+### [primaryAxisAlignItems](/docs/plugins/api/properties/nodes-primaryaxisalignitems/): 'MIN' | 'MAX' | 'CENTER' | 'SPACE\_BETWEEN' | 'SPACE\_EVENLY' | 'SPACE\_AROUND'
 
 Applicable only on "HORIZONTAL" or "VERTICAL" auto-layout frames. Determines how the auto-layout frame’s children should be aligned in the primary axis direction.
 
