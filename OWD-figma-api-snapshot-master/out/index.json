@@ -2423,6 +2423,13 @@
   },
   {
     "dataset": "plugin-api",
+    "title": "TransformModifier | Developer Docs",
+    "url": "https://developers.figma.com/docs/plugins/api/TransformModifier/",
+    "path": "/docs/plugins/api/TransformModifier/",
+    "slug": "docs__plugins__api__TransformModifier"
+  },
+  {
+    "dataset": "plugin-api",
     "title": "Trigger | Developer Docs",
     "url": "https://developers.figma.com/docs/plugins/api/Trigger/",
     "path": "/docs/plugins/api/Trigger/",
